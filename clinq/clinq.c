@@ -30,7 +30,7 @@ int *filter_i(int *arr, int arr_size,int* new_size, bool (*func)(int))
         }
     }
     (*new_size) = write_index;
-    return arr; // Return the new size of the filtered array
+    return arr;
 }
 float *filter_f(float *arr, int arr_size,int* new_size, bool (*func)(float))
 {
@@ -44,5 +44,5 @@ float *filter_f(float *arr, int arr_size,int* new_size, bool (*func)(float))
         }
     }
     (*new_size) = write_index;
-    return arr; // Return the new size of the filtered array
+    return arr;
 }
