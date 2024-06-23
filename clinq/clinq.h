@@ -5,6 +5,7 @@
 
 /// @brief Creates a lambda function in C.
 /// @note This macro generates an anonymous lambda function.
+/// @note https://github.com/wd5gnr/clambda
 /// @param lambda$_ret The return type of the lambda function.
 /// @param lambda$_args The arguments of the lambda function.
 /// @param lambda$_body The body of the lambda function.
