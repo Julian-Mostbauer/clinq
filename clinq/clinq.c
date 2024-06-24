@@ -18,7 +18,7 @@ float *map_f(float *arr, int arr_size, float (*func)(float))
     return arr;
 }
 
-int *filter_i(int *arr, int arr_size,int* new_size, bool (*func)(int))
+int *filter_i(int *arr, int arr_size, int *new_size, bool (*func)(int))
 {
     int write_index = 0; // Index to write filtered elements
 
@@ -32,7 +32,7 @@ int *filter_i(int *arr, int arr_size,int* new_size, bool (*func)(int))
     (*new_size) = write_index;
     return arr;
 }
-float *filter_f(float *arr, int arr_size,int* new_size, bool (*func)(float))
+float *filter_f(float *arr, int arr_size, int *new_size, bool (*func)(float))
 {
     int write_index = 0; // Index to write filtered elements
 
@@ -45,4 +45,44 @@ float *filter_f(float *arr, int arr_size,int* new_size, bool (*func)(float))
     }
     (*new_size) = write_index;
     return arr;
+}
+
+bool all_i(const int *arr, int arr_size, bool (*func)(int))
+{
+    for (int i = 0; i < arr_size; i++)
+    {
+        if (!func(arr[i]))
+            return false;
+    }
+    return true;
+}
+
+bool all_f(const float *arr, int arr_size, bool (*func)(float))
+{
+    for (int i = 0; i < arr_size; i++)
+    {
+        if (!func(arr[i]))
+            return false;
+    }
+    return true;
+}
+
+bool any_i(const int *arr, int arr_size, bool (*func)(int))
+{
+    for (int i = 0; i < arr_size; i++)
+    {
+        if (func(arr[i]))
+            return true;
+    }
+    return false;
+}
+
+bool any_f(const float *arr, int arr_size, bool (*func)(float))
+{
+    for (int i = 0; i < arr_size; i++)
+    {
+        if (func(arr[i]))
+            return true;
+    }
+    return false;
 }
