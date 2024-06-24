@@ -1,6 +1,6 @@
 #include "clinq.h"
 
-int *map_i(int *arr, int arr_size, int (*func)(int))
+int *map_i(int *arr, const const int arr_size, int (*const func)(int))
 {
     for (int i = 0; i < arr_size; i++)
     {
@@ -9,7 +9,7 @@ int *map_i(int *arr, int arr_size, int (*func)(int))
     return arr;
 }
 
-float *map_f(float *arr, int arr_size, float (*func)(float))
+float *map_f(float *arr, const const int arr_size, float (*const func)(float))
 {
     for (int i = 0; i < arr_size; i++)
     {
@@ -18,7 +18,7 @@ float *map_f(float *arr, int arr_size, float (*func)(float))
     return arr;
 }
 
-int *filter_i(int *arr, int arr_size, int *new_size, bool (*func)(int))
+int *filter_i(int *arr, const int arr_size, int *new_size, bool (*const func)(int))
 {
     int write_index = 0; // Index to write filtered elements
 
@@ -32,7 +32,7 @@ int *filter_i(int *arr, int arr_size, int *new_size, bool (*func)(int))
     (*new_size) = write_index;
     return arr;
 }
-float *filter_f(float *arr, int arr_size, int *new_size, bool (*func)(float))
+float *filter_f(float *arr, const int arr_size, int *new_size, bool (*const func)(float))
 {
     int write_index = 0; // Index to write filtered elements
 
@@ -47,7 +47,7 @@ float *filter_f(float *arr, int arr_size, int *new_size, bool (*func)(float))
     return arr;
 }
 
-bool all_i(const int *arr, int arr_size, bool (*func)(int))
+bool all_i(const int *arr, const int arr_size, bool (*const func)(int))
 {
     for (int i = 0; i < arr_size; i++)
     {
@@ -57,7 +57,7 @@ bool all_i(const int *arr, int arr_size, bool (*func)(int))
     return true;
 }
 
-bool all_f(const float *arr, int arr_size, bool (*func)(float))
+bool all_f(const float *arr, const int arr_size, bool (*const func)(float))
 {
     for (int i = 0; i < arr_size; i++)
     {
@@ -67,7 +67,7 @@ bool all_f(const float *arr, int arr_size, bool (*func)(float))
     return true;
 }
 
-bool any_i(const int *arr, int arr_size, bool (*func)(int))
+bool any_i(const int *arr, const int arr_size, bool (*const func)(int))
 {
     for (int i = 0; i < arr_size; i++)
     {
@@ -77,7 +77,7 @@ bool any_i(const int *arr, int arr_size, bool (*func)(int))
     return false;
 }
 
-bool any_f(const float *arr, int arr_size, bool (*func)(float))
+bool any_f(const float *arr, const int arr_size, bool (*const func)(float))
 {
     for (int i = 0; i < arr_size; i++)
     {
