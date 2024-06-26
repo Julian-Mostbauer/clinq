@@ -73,4 +73,18 @@ bool any_i(const int *arr, int arr_size, bool (*const func)(int));
 /// @return A bool that tells if all the elements meet the requirement.
 bool any_f(const float *arr, int arr_size, bool (*const func)(float));
 
+/// @brief Applies all the functions to the value in order
+/// @param val The original value 
+/// @param arr_size The size of the function array.
+/// @param func The function array that is used on the value
+/// @return The result of all the operations
+int invoke_each_i(int val,int arr_size, int (*const *funcs)(int));
+
+/// @brief Applies all the functions to the value in order
+/// @param val The original value 
+/// @param arr_size The size of the function array.
+/// @param func The function array that is used on the value
+/// @return The result of all the operations 
+float invoke_each_f(float val,int arr_size, float (*const *funcs)(float));
+
 #endif // CLINQ_H

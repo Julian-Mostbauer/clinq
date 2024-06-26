@@ -1,6 +1,6 @@
 #include "clinq.h"
 
-int *map_i(int *arr, const const int arr_size, int (*const func)(int))
+int *map_i(int *arr, const int arr_size, int (*const func)(int))
 {
     for (int i = 0; i < arr_size; i++)
     {
@@ -85,4 +85,22 @@ bool any_f(const float *arr, const int arr_size, bool (*const func)(float))
             return true;
     }
     return false;
+}
+
+int invoke_each_i(int val, int arr_size, int (*const *funcs)(int))
+{
+    for (int i = 0; i < arr_size; i++)
+    {
+        val = funcs[i](val);
+    }
+    return val;
+}
+
+float invoke_each_f(float val, int arr_size, float (*const *funcs)(float))
+{
+    for (int i = 0; i < arr_size; i++)
+    {
+        val = funcs[i](val);
+    }
+    return val;
 }
