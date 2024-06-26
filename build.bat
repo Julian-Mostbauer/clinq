@@ -5,7 +5,7 @@ if not exist bin (
     MKDIR bin
 )
 
-CD bin
+cd bin
 
 echo creating object file of main
 gcc -c ../main.c --std=gnu99 -o main.o
@@ -20,11 +20,11 @@ echo linking object files
 gcc main.o clinq.o easy_output.o -o clinq_example
 
 if not exist exec (
-    MKDIR exec
+    mkdir exec
 )
 
 
-MOVE clinq_example.exe %EXE_PATH%
+move clinq_example.exe %EXE_PATH%
 echo created executable at %EXE_PATH% 
 
 echo cleaning object files
