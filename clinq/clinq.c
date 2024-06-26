@@ -12,7 +12,7 @@ int *map_i(int *arr, const int arr_size, int (*const func)(int))
 float *map_f(float *arr, const const int arr_size, float (*const func)(float))
 {
     for (int i = 0; i < arr_size; i++)
-    {
+    { 
         arr[i] = func(arr[i]);
     }
     return arr;
